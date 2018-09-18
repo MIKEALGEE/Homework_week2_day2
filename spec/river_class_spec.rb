@@ -30,11 +30,12 @@ class RiverTest < MiniTest::Test
     assert_equal(1,@river.count_fish())
   end
 
-  def test_bear_eat_fish() #method for eating fish... not sure if this is overkill.
+  def test_bear_eat_fish()                #method for eating fish... not sure if this is overkill.
     @river.add_fish(@fish2)
     food = @river.bear_eat_fish(@fish2)
     @bear1.can_eat_fish(food)
     assert_equal(0,@river.count_fish)
+    assert_equal(1,@bear1.count_stomach)
   end
 
 
