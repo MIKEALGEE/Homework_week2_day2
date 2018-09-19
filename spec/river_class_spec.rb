@@ -29,13 +29,21 @@ class RiverTest < MiniTest::Test
     @river.add_fish(@fish1)
     assert_equal(1,@river.count_fish())
   end
+  #
+  def test_bear_eat_fish()  #method for eating fish... not sure if this is overkill.
+    @river.add_fish(@fish5)
+    @river.add_fish(@fish3)
 
-  def test_bear_eat_fish()                #method for eating fish... not sure if this is overkill.
-    @river.add_fish(@fish2)
-    food = @river.bear_eat_fish(@fish2)
-    @bear1.can_eat_fish(food)
+    food1 = @river.bear_eat_fish(@fish5)
+    food2 = @river.bear_eat_fish(@fish3)
+
+    @bear1.can_eat_fish(food1)
+    @bear1.can_eat_fish(food2)
+
     assert_equal(0,@river.count_fish)
-    assert_equal(1,@bear1.count_stomach)
+    assert_equal(2,@bear1.count_stomach)
+
+    p @bear1.print_stomach
   end
 
 

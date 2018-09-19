@@ -18,5 +18,12 @@ class Bear
     @stomach << fish
   end
 
+  def print_stomach
+    return @stomach
+  end
+
+  def bear_can_roar
+    "Roooooar"
+  end
 
 end
